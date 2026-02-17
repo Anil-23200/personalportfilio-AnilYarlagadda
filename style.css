@@ -1,0 +1,172 @@
+body{
+    background:linear-gradient(to bottom, white,#419fd1);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    color:#111827 !important ;
+    font-family: Arial;
+    box-sizing: border-box;
+
+}
+.navbar{
+    font-family:Arial;
+    
+    border-bottom: 2px solid rgb(35, 75, 209);
+    background: linear-gradient(to right,#93a7c8cf,#419fd1);
+   
+    
+}
+.nav-link:hover{
+    border: 2px solid #111827;
+    background:#e9eef6 ;
+    color:#1b6e9a  !important; 
+}
+.nav-link{
+  border-radius: none;
+  background: none;
+ 
+}
+.nav-link{
+    color:#111827 !important;
+}
+.pic{
+    border: 6px solid  #e9eef6;
+    
+}
+.obj{
+    border-bottom: 2px solid #1b6e9a  ;
+    
+    
+   
+}
+#about{
+    height: 100vh;
+    width: 100vw;
+    
+
+   
+   
+}
+.education {
+  padding: 60px 20px;
+  
+}
+
+.education h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+ 
+  
+  
+}
+
+.edu-timeline {
+  max-width: 700px;
+  margin: auto;
+  border-left: 3px solid #007bff;
+  padding-left: 30px;
+}
+
+.edu-item {
+  margin-bottom: 30px;
+  position: relative;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.edu-item::before {
+  content: "";
+  position: absolute;
+  left: -38px;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  background: #007bff;
+  border-radius: 50%;
+}
+
+.edu-item h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1b6e9a;
+}
+
+.edu-item span {
+  font-size: 14px;
+  color: gray;
+}
+
+.edu-item p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #555;
+}
+.skills-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  text-align: center;
+  
+}
+
+.skills-icons div {
+  padding: 15px;
+  background:#1b6e9a;
+  border-radius: 25px;
+  color: #e9eef6;
+  font-family: Arial;
+}
+
+.skills-icons img {
+  width: 40px;
+  margin-bottom: 10px;
+}
+.accordion-header button{
+    font-size:20px;
+    font-family: Arial;
+    font-weight: 600;
+    color: #f9f9f9;
+    background-color: #1b6e9a;
+    
+}
+.accordion-body .btn{
+    background-color: #1b6e9a;
+}
+.accordion-body{
+    background-color: #e9eef6;
+}
+   .accordion-item{
+    margin-bottom: 10px;
+    
+
+    
+   }
+ .btn-primary{
+    background-color: #1b6e9a !important;
+ } 
+ .btn-primary:hover{
+    background-color: #eff1f5 !important;
+    color: #1b6e9a !important;
+ } 
+ .footer{
+  border: 1px solid rgb(217, 217, 231);
+  border-left: none;
+  border-right: none;
+ }
+ .nav-link:hover{
+  border: none;
+  border-radius: 30px;
+ }
+ @media (max-width: 575px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .about{
+    padding: 20px;
+  }
+}
