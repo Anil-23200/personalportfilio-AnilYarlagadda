@@ -1,5 +1,9 @@
 body{
+<<<<<<< HEAD
     background:linear-gradient(to bottom, white,#419fd1,rgba(255, 255, 255, 0.751));
+=======
+    background:linear-gradient(to bottom, white,#419fd1, white);
+>>>>>>> cb34f4745d8b9562f9bd0c6efe1842d8c3071d69
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
