@@ -172,17 +172,17 @@
     <section class="contact mt-5 " id="contact">
       <h2 style="color: #2563EB;text-align: center;">CONTACT ME</h2>
 
-      <form class="w-50 mx-auto mt-4">
+      <form class="w-50 mx-auto mt-4" action="https://formspree.io/f/mzdaybvg" method="post"> 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingInput" placeholder="Your Name" required>
+          <input type="text" class="form-control" name="name" id="floatingInput" placeholder="Your Name" required>
           <label for="floatingInput">Name</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+          <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea" required></textarea>
+          <textarea class="form-control" placeholder="Leave a message here" name="message" id="floatingTextarea" required></textarea>
           <label for="floatingTextarea">Message</label>
         </div>
         <div class=" my-3 ">
