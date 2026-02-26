@@ -116,15 +116,24 @@ body{
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 20px;
   text-align: center;
+
   
 }
-
+@media(max-width:2000px){
+  .skills-icons{
+  display:grid;
+   grid-template-columns: repeat(3, minmax(100px, 1fr));
+   margin: auto 150px;
+  
+}
+}
 .skills-icons div {
   padding: 15px;
   background:#1b6e9a;
   border-radius: 25px;
   color: #e9eef6;
   font-family: Arial;
+ 
 }
 
 .skills-icons img {

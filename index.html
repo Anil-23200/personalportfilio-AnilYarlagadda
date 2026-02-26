@@ -8,7 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
 
   <title>Personal Portfolio</title>
 </head>
@@ -115,11 +116,12 @@
           <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
               <p>• Designed and developed a responsive personal portfolio website to showcase skills, projects, and
-                   achievements. <br>
+                achievements. <br>
                 • Implemented modern UI components using Bootstrap and custom CSS. <br>
                 • Deployed the website using GitHub Pages for public access. <br>
                 • Managed source code and updates through Git and GitHub.
-              </p> <a href="https://anil-23200.github.io/personalportfilio-AnilYarlagadda/" target="_self" class="btn  " tabindex="-1" role="button" aria-disabled="true">Live Link</a>
+              </p> <a href="https://anil-23200.github.io/personalportfilio-AnilYarlagadda/" target="_self" class="btn  "
+                tabindex="-1" role="button" aria-disabled="true">Live Link</a>
 
             </div>
           </div>
@@ -137,8 +139,10 @@
                 • Frontend: HTML5, CSS3, Bootstrap <br>
                 • Tools: Git, GitHub Pages, VS Code <br>
                 • Hosted templates on GitHub for version control and deployment.</p>
-              <a href="https://anil-23200.github.io/aptsample/" class="btn  " target="_blank" tabindex="-1" role="button" aria-disabled="true">Live Link-1</a>
-              <a href="https://centralwebsample.vercel.app/" target="_blank" class="btn  " tabindex="-1" role="button" aria-disabled="true">Live Link-2</a>
+              <a href="https://anil-23200.github.io/aptsample/" class="btn  " target="_blank" tabindex="-1"
+                role="button" aria-disabled="true">Live Link-1</a>
+              <a href="https://centralwebsample.vercel.app/" target="_blank" class="btn  " tabindex="-1" role="button"
+                aria-disabled="true">Live Link-2</a>
 
 
             </div>
@@ -163,8 +167,9 @@
     </Section>
     <aside>
       <div class=" w-25 mx-auto mt-4 mb-4">
-        <a class="btn btn-primary" href="https://drive.google.com/file/d/1bFxBub5SLTHo-bUKEiljRFev8pqO9GuC/view?usp=sharing" target="_blank" type="button" tabindex="-1" role="button" aria-disabled="true"><i
-            class="bi bi-download"></i>
+        <a class="btn btn-primary"
+          href="https://drive.google.com/file/d/1bFxBub5SLTHo-bUKEiljRFev8pqO9GuC/view?usp=sharing" target="_blank"
+          type="button" tabindex="-1" role="button" aria-disabled="true"><i class="bi bi-download"></i>
           My Resume</a>
 
       </div>
@@ -172,21 +177,22 @@
     <section class="contact mt-5 " id="contact">
       <h2 style="color: #2563EB;text-align: center;">CONTACT ME</h2>
 
-      <form class="w-50 mx-auto mt-4" action="https://formspree.io/f/mzdaybvg" method="post"> 
+      <form class="w-50 mx-auto mt-4" onsubmit="contactMe(event)">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="name" id="floatingInput" placeholder="Your Name" required>
-          <label for="floatingInput">Name</label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+          <label for="name">Name</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
-          <label for="floatingInput">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+          <label for="email">Email address</label>
         </div>
         <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a message here" name="message" id="floatingTextarea" required></textarea>
-          <label for="floatingTextarea">Message</label>
+          <textarea class="form-control" placeholder="Leave a message here" name="message" id="message"
+            required></textarea>
+          <label for="message">Message</label>
         </div>
         <div class=" my-3 ">
-          <button class="btn btn-primary " type="submit">Send Me</button>
+          <button class="btn btn-primary " type="submit" >Send Me</button>
         </div>
 
       </form>
@@ -194,7 +200,7 @@
     </section>
 
   </main>
-  <footer class="footer w-75 mx-auto mb-4">
+  <footer class="footer w-75 mx-auto mb-4 flex-sm-column">
     <div class="d-flex justify-content-evenly align-items-center">
       <div><img src="imagelogo.png" height="30px" alt=""> &copy;Anil Yarlagadda</div>
       <div class="text-center">
@@ -211,17 +217,23 @@
       </div>
       <nav class="nav flex-column ">
 
-        <a  class="nav-link d-flex flex-nowrap flex-shrink-3" href="mailto:anilyarlagadda6@gmail.com"><i class="bi bi-envelope " style="color: rgb(189, 127, 56); font-size: 36px;"><span class="ms-2 " style="color: black; font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif;font-size: 24px;">anilyarlagadda6@gmail.com</span></i></a>
-        <a class="nav-link "  href="https://wa.me/919676857922" target="_blank"><i style="color: green; font-size: 36px;" class="bi bi-whatsapp"><span class="ms-2" style="color: black;font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif; font-size: 24px;">9676857922</span></i>
+        <a class="nav-link d-flex flex-nowrap flex-shrink-3" href="mailto:anilyarlagadda6@gmail.com"><i
+            class="bi bi-envelope " style="color: rgb(189, 127, 56); font-size: 36px;"><span class="ms-2 "
+              style="color: black; font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif;font-size: 24px;">anilyarlagadda6@gmail.com</span></i></a>
+        <a class="nav-link " href="https://wa.me/919676857922" target="_blank"><i style="color: green; font-size: 36px;"
+            class="bi bi-whatsapp"><span class="ms-2"
+              style="color: black;font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif; font-size: 24px;">9676857922</span></i>
         </a>
-        <a class="nav-link" href="tel:9676857922"><i style="color:blue; font-size: 36px;" class="bi bi-telephone"> <span style="color: black;font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif;font-size:24px;" clas="ms-2 ">+91 9676857922</span></i>
+        <a class="nav-link" href="tel:9676857922"><i style="color:blue; font-size: 36px;" class="bi bi-telephone"> <span
+              style="color: black;font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif;font-size:24px;"
+              clas="ms-2 ">+91 9676857922</span></i>
         </a>
 
       </nav>
     </div>
   </footer>
 
-
+  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
