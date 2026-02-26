@@ -13,6 +13,7 @@ body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  
 
 }
 .navbar{
@@ -123,7 +124,8 @@ body{
   .skills-icons{
   display:grid;
    grid-template-columns: repeat(3, minmax(100px, 1fr));
-   margin: auto 150px;
+   margin: auto 15px;
+  
   
 }
 }
@@ -176,12 +178,16 @@ body{
   border: none;
   border-radius: 30px;
  }
- @media (max-width: 575px) {
+ @media (max-width:600px) {
   body {
     font-size: 14px;
     padding: 10px;
   }
-  .about{
-    padding: 20px;
+  .profile{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+  
 }

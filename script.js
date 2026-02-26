@@ -8,7 +8,7 @@ function contactMe(event) {
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    console.log("Name:", name)
+    
 
     const info = {
         form_name: name,
