@@ -25,3 +25,37 @@ function contactMe(event) {
             alert("Email Not Sent!");
         });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const revealTargets = [
+        ...document.querySelectorAll(".edu-item"),
+        ...document.querySelectorAll(".skills-icons div"),
+        ...document.querySelectorAll(".accordion-item"),
+        document.querySelector(".obj"),
+        document.querySelector(".profile .pic"),
+        document.querySelector(".contact form"),
+        document.querySelector(".footer")
+    ].filter(Boolean);
+
+    revealTargets.forEach((el) => el.classList.add("reveal"));
+
+    if (!("IntersectionObserver" in window)) {
+        revealTargets.forEach((el) => el.classList.add("is-visible"));
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealTargets.forEach((el) => observer.observe(el));
+
+});
