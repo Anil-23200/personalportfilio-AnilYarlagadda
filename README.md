@@ -1,14 +1,15 @@
 # Anil Yarlagadda – Portfolio
 
+Live URL: `https://personalportfilio-anilyarlagadda.vercel.app/`
+
 Static site: `index.html`, `style.css`, `script.js`, `robots.txt`, `sitemap.xml`, `favicon.ico`, `404.html`, `assets/`.
 
-## 1. Edit before publishing
-1. Replace `https://YOUR-DOMAIN.com` in `index.html`, `robots.txt`, `sitemap.xml` with your real URL.
-2. Replace `YOUR-LINKEDIN` (index.html, 3 places) with your LinkedIn handle.
-3. Replace `assets/anil-yarlagadda-profile.webp` with your real photo (WebP, about 600x720). The current file is a placeholder.
-4. Fill project demo/GitHub links (`#`), certificate links, and the Student Management System card (it is not in your resumes).
-5. Contact form: create a free form at formspree.io, copy the form ID, replace `YOUR_FORM_ID` in `index.html`. Until then the form opens the visitor's email app.
-6. Remove skills you cannot discuss (C++, Off-Page SEO, Google Ads are in the brief but not in your resumes).
+## 1. Status & Configuration
+1. Real URL configured: `https://personalportfilio-anilyarlagadda.vercel.app/` in `index.html`, `robots.txt`, `sitemap.xml`.
+2. LinkedIn configured: `https://www.linkedin.com/in/anil-yarlagadda/`.
+3. Contact form: integrated with EmailJS (Service ID: `service_31vvnof`, Template ID: `template_v1jfss2`).
+4. Replace `assets/anil-yarlagadda-profile.webp` with your preferred photo if needed.
+5. Fill remaining project demo/GitHub links (`#`) and certificate links as needed.
 
 ## 2. Deploy
 **GitHub:** create a repo, upload all files (or `git init && git add . && git commit -m "Initial" && git remote add origin <url> && git push -u origin main`).
