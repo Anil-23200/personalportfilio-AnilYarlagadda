@@ -30,6 +30,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="style.css">
 
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    if (window.emailjs) {
+      try {
+        emailjs.init({ publicKey: "-e3iVlZmkErzJUW8P" });
+      } catch (e) {
+        console.warn("EmailJS init:", e);
+      }
+    }
+  })();
+</script>
+
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 
 <!-- Google Analytics 4: uncomment and replace G-XXXXXXXXXX -->
@@ -383,7 +397,7 @@
     <li><strong>Python Full Stack Development</strong><span>Udemy</span><a href="https://drive.google.com/file/d/1hHzroz6Lsl7OHB46kh4eUwVp1mhkmbez/view?usp=sharing" target="_blank" rel="noopener">View certificate</a></li>
     <li><strong>AWS Cloud Practitioner Essentials</strong><span>AWS</span><a href="https://drive.google.com/file/d/1Vt5EC1KJgLnvYFgv39m-AhtS2HkpgqFM/view?usp=sharing" target="_blank" rel="noopener">View certificate</a></li>
     <li><strong>Data Science using Python</strong><span>International Level Student Workshop - 2k24</span><a href="https://drive.google.com/file/d/1KrcV22bjhGmbX7xbGLYK2rnoyhQBxViK/view?usp=sharing" target="_blank" rel="noopener">View certificate</a></li>
-    <li><strong>AI &amp; Machine Learning</strong><span>IBM SkillBuild / Simplilearn</span>></li>
+    <li><strong>AI &amp; Machine Learning</strong><span>IBM SkillBuild / Simplilearn</span></li>
     <li><strong>Web Design</strong><span>NI-MSME</span><a href="https://drive.google.com/file/d/1T6rtlu7bs0yVRTVIAybel29rPGmTQyKn/view?usp=sharing" target="_blank" rel="noopener">View certificate</a></li>
     <li><strong>SEO Course</strong><span>Completed</span></li>
   </ul>
@@ -397,7 +411,7 @@
       <a href="mailto:anilyarlagadda6@gmail.com">anilyarlagadda6@gmail.com</a> ·
       <a href="https://www.linkedin.com/in/anil-yarlagadda/" target="_blank" rel="noopener">LinkedIn</a> ·
       <a href="https://github.com/Anil-23200" target="_blank" rel="noopener">GitHub</a></p>
-    <form id="contactForm" method="POST" novalidate>
+    <form id="contactForm" onsubmit="return contactMe(event)" method="POST" novalidate>
       <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required><small class="err" id="nameErr"></small></div>
       <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><small class="err" id="emailErr"></small></div>
       <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea><small class="err" id="msgErr"></small></div>

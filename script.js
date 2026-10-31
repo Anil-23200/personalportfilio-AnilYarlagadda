@@ -7,126 +7,222 @@
   // Theme toggle
   function syncTheme() {
     var dark = root.dataset.theme !== 'light';
-    themeBtn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-    themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    if (themeBtn) {
+      themeBtn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+      themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
   }
-  themeBtn.addEventListener('click', function () {
-    var next = root.dataset.theme === 'light' ? 'dark' : 'light';
-    root.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    syncTheme();
-  });
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var next = root.dataset.theme === 'light' ? 'dark' : 'light';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      syncTheme();
+    });
+  }
   syncTheme();
 
   // Mobile menu
-  menuBtn.addEventListener('click', function () {
-    var open = navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open);
-  });
-  navLinks.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-  });
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', function () {
+      var open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    navLinks.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        navLinks.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  var yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 
-  // EmailJS initialization
-  var EMAILJS_PUBLIC_KEY = '-e3iVlZmkErzJUW8P';
+  // EmailJS configuration
+  var EMAILJS_PUBLIC_KEY = 'T3a3O25CZ0mxgkt18';
   var EMAILJS_SERVICE_ID = 'service_31vvnof';
-  var EMAILJS_TEMPLATE_ID = 'template_v1jfss2';
+  var EMAILJS_TEMPLATE_ID = 'template_fcys2lb';
 
-  if (window.emailjs) {
-    try {
-      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-    } catch (e) {
-      console.warn('EmailJS init error:', e);
+  function initEmailJS() {
+    if (window.emailjs) {
+      try {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      } catch (e) {
+        try {
+          emailjs.init(EMAILJS_PUBLIC_KEY);
+        } catch (err) {
+          console.warn('EmailJS init warning:', err);
+        }
+      }
     }
   }
+  initEmailJS();
 
-  // Contact form handler
-  var form = document.getElementById('contactForm');
-  var status = document.getElementById('formStatus');
-  var btn = document.getElementById('sendBtn');
-  var fields = [
-    { el: form.name, err: 'nameErr', check: function (v) { return v.trim().length >= 2 ? '' : 'Enter your name (at least 2 characters).'; } },
-    { el: form.email, err: 'emailErr', check: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? '' : 'Enter a valid email address.'; } },
-    { el: form.message, err: 'msgErr', check: function (v) { return v.trim().length >= 10 ? '' : 'Write a message of at least 10 characters.'; } }
-  ];
+  // Contact form submission handler
+  function contactMe(event) {
+    if (event) {
+      event.preventDefault();
+    }
 
-  function validate(f) {
-    var msg = f.check(f.el.value);
-    document.getElementById(f.err).textContent = msg;
-    f.el.classList.toggle('invalid', !!msg);
-    f.el.setAttribute('aria-invalid', msg ? 'true' : 'false');
-    return !msg;
-  }
-  fields.forEach(function (f) { f.el.addEventListener('blur', function () { validate(f); }); });
+    var nameEl = document.getElementById('name');
+    var emailEl = document.getElementById('email');
+    var msgEl = document.getElementById('message');
+    var statusEl = document.getElementById('formStatus');
+    var btnEl = document.getElementById('sendBtn');
+    var gotchaEl = document.querySelector('input[name="_gotcha"]');
 
-  function sendEmail() {
-    btn.disabled = true;
-    var originalBtnText = btn.innerHTML;
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
-    status.textContent = 'Sending message…';
+    // Honeypot check for spam
+    if (gotchaEl && gotchaEl.value) {
+      return false;
+    }
 
-    try {
-      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-    } catch (e) {}
+    var name = nameEl ? nameEl.value.trim() : '';
+    var email = emailEl ? emailEl.value.trim() : '';
+    var message = msgEl ? msgEl.value.trim() : '';
 
-    var nameVal = form.name.value.trim();
-    var emailVal = form.email.value.trim();
-    var msgVal = form.message.value.trim();
+    var nameErr = document.getElementById('nameErr');
+    var emailErr = document.getElementById('emailErr');
+    var msgErr = document.getElementById('msgErr');
 
-    var templateParams = {
-      form_name: nameVal,
-      name: nameVal,
-      from_name: nameVal,
-      form_email: emailVal,
-      email: emailVal,
-      from_email: emailVal,
-      text: msgVal,
-      message: msgVal
-    };
+    if (nameErr) nameErr.textContent = '';
+    if (emailErr) emailErr.textContent = '';
+    if (msgErr) msgErr.textContent = '';
 
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-      .then(function () {
-        form.reset();
-        status.textContent = 'Message sent successfully! Thank you, I’ll reply soon.';
-        alert('✨ Message sent successfully! Thank you for contacting me.');
-      })
-      .catch(function (error) {
-        console.error('EmailJS Error:', error);
-        status.textContent = 'Failed to send message. Please email anilyarlagadda6@gmail.com directly.';
-        alert('❌ Failed to send message. Please email anilyarlagadda6@gmail.com directly.');
-      })
-      .finally(function () {
-        btn.disabled = false;
-        btn.innerHTML = originalBtnText;
-      });
-  }
+    var hasError = false;
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var ok = fields.map(validate).every(Boolean);
-    if (!ok) { status.textContent = 'Please fix the highlighted fields.'; return; }
-    if (form._gotcha && form._gotcha.value) return; // honeypot
+    if (!name || name.length < 2) {
+      if (nameErr) nameErr.textContent = 'Please enter your name (at least 2 characters).';
+      if (nameEl) nameEl.classList.add('invalid');
+      hasError = true;
+    } else if (nameEl) {
+      nameEl.classList.remove('invalid');
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailPattern.test(email)) {
+      if (emailErr) emailErr.textContent = 'Please enter a valid email address.';
+      if (emailEl) emailEl.classList.add('invalid');
+      hasError = true;
+    } else if (emailEl) {
+      emailEl.classList.remove('invalid');
+    }
+
+    if (!message || message.length < 5) {
+      if (msgErr) msgErr.textContent = 'Please write a message (at least 5 characters).';
+      if (msgEl) msgEl.classList.add('invalid');
+      hasError = true;
+    } else if (msgEl) {
+      msgEl.classList.remove('invalid');
+    }
+
+    if (hasError) {
+      if (statusEl) statusEl.textContent = 'Please fix the highlighted fields above.';
+      return false;
+    }
+
+    var originalBtnText = btnEl ? btnEl.innerHTML : 'Send message';
+    if (btnEl) {
+      btnEl.disabled = true;
+      btnEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+    }
+    if (statusEl) {
+      statusEl.textContent = 'Sending message…';
+      statusEl.style.color = '';
+    }
+
+    function executeSend() {
+      initEmailJS();
+
+      var templateParams = {
+        form_name: name,
+        name: name,
+        from_name: name,
+        form_email: email,
+        email: email,
+        from_email: email,
+        text: message,
+        message: message
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+        .then(function (response) {
+          console.log('EmailJS Success:', response);
+          var contactForm = document.getElementById('contactForm');
+          if (contactForm) {
+            contactForm.reset();
+          }
+          if (statusEl) {
+            statusEl.textContent = '✨ Message sent successfully! Thank you, I’ll reply soon.';
+            statusEl.style.color = 'var(--accent)';
+          }
+          alert('✨ Email Sent Successfully!');
+        })
+        .catch(function (error) {
+          console.error('EmailJS Error:', error);
+          if (statusEl) {
+            statusEl.textContent = '❌ Failed to send. Please email anilyarlagadda6@gmail.com directly.';
+            statusEl.style.color = '#d93025';
+          }
+          alert('❌ Email Not Sent! Please contact directly at anilyarlagadda6@gmail.com');
+        })
+        .finally(function () {
+          if (btnEl) {
+            btnEl.disabled = false;
+            btnEl.innerHTML = originalBtnText;
+          }
+        });
+    }
 
     if (window.emailjs) {
-      sendEmail();
+      executeSend();
     } else {
-      btn.disabled = true;
-      status.textContent = 'Connecting to email service…';
-      var s = document.createElement('script');
-      s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-      s.onload = function () {
-        sendEmail();
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      script.onload = executeSend;
+      script.onerror = function () {
+        if (btnEl) {
+          btnEl.disabled = false;
+          btnEl.innerHTML = originalBtnText;
+        }
+        if (statusEl) {
+          statusEl.textContent = 'Could not load email service. Please email anilyarlagadda6@gmail.com directly.';
+          statusEl.style.color = '#d93025';
+        }
+        alert('Could not load email service. Please email anilyarlagadda6@gmail.com directly.');
       };
-      s.onerror = function () {
-        btn.disabled = false;
-        status.textContent = 'Could not load email service. Please email anilyarlagadda6@gmail.com directly.';
-      };
-      document.head.appendChild(s);
+      document.head.appendChild(script);
+    }
+
+    return false;
+  }
+
+  // Clear validation on user typing
+  ['name', 'email', 'message'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', function () {
+        el.classList.remove('invalid');
+        var err = document.getElementById(id === 'message' ? 'msgErr' : id + 'Err');
+        if (err) err.textContent = '';
+      });
     }
   });
+
+  // Attach submit handler to form
+  var form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', contactMe);
+  }
+
+  // Expose contactMe globally
+  window.contactMe = contactMe;
 })();
