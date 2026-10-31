@@ -1,256 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: replace https://YOUR-DOMAIN.com everywhere (index.html, robots.txt, sitemap.xml) with your real domain -->
+<title>Anil Yarlagadda | Full Stack Python Developer Portfolio, Hyderabad</title>
+<meta name="description" content="Anil Yarlagadda is a Full Stack Python Developer and web developer in Hyderabad with Django, React.js and SEO fundamentals. View projects, SEO practice work and contact details.">
+<meta name="author" content="Anil Yarlagadda">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0b1030">
+<link rel="canonical" href="https://YOUR-DOMAIN.com/">
+<link rel="icon" href="favicon.ico" sizes="any">
 
-  <title>Personal Portfolio</title>
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Anil Yarlagadda Portfolio">
+<meta property="og:title" content="Anil Yarlagadda | Full Stack Python Developer">
+<meta property="og:description" content="Python Developer Portfolio: Django, React.js, SQL/MongoDB and SEO fundamentals. Based in Hyderabad, India.">
+<meta property="og:url" content="https://YOUR-DOMAIN.com/">
+<meta property="og:image" content="https://YOUR-DOMAIN.com/assets/og-image.jpg">
+<meta property="og:image:alt" content="Anil Yarlagadda, Full Stack Python Developer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anil Yarlagadda | Full Stack Python Developer">
+<meta name="twitter:description" content="Python Developer Portfolio: Django, React.js, SQL/MongoDB and SEO fundamentals.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN.com/assets/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="style.css">
+
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
+<!-- Google Analytics 4: uncomment and replace G-XXXXXXXXXX -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+<!-- Google Search Console (HTML tag method): <meta name="google-site-verification" content="YOUR_CODE"> -->
+<!-- Bing Webmaster Tools: <meta name="msvalidate.01" content="YOUR_CODE"> -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://YOUR-DOMAIN.com/#website",
+      "url": "https://YOUR-DOMAIN.com/",
+      "name": "Anil Yarlagadda Portfolio",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://YOUR-DOMAIN.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://YOUR-DOMAIN.com/#profilepage",
+      "url": "https://YOUR-DOMAIN.com/",
+      "name": "Anil Yarlagadda | Full Stack Python Developer",
+      "isPartOf": { "@id": "https://YOUR-DOMAIN.com/#website" },
+      "mainEntity": { "@id": "https://YOUR-DOMAIN.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://YOUR-DOMAIN.com/#person",
+      "name": "Anil Yarlagadda",
+      "jobTitle": "Full Stack Python Developer",
+      "description": "B.Tech Information Technology graduate (2025) working with Python, Django, React.js and SEO fundamentals.",
+      "url": "https://YOUR-DOMAIN.com/",
+      "image": "https://YOUR-DOMAIN.com/assets/anil-yarlagadda-profile.webp",
+      "email": "mailto:anilyarlagadda6@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Guru Nanak Institute of Technology" },
+      "knowsAbout": ["Python", "Django", "React.js", "REST API", "MySQL", "MongoDB", "Technical SEO", "On-Page SEO", "Google Search Console"],
+      "sameAs": ["https://github.com/Anil-23200", "https://www.linkedin.com/in/anil-yarlagadda/"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR-DOMAIN.com/" }]
+    }
+  ]
+}
+</script>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand ms-lg-5" href="#">
-        <img src="imagelogo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-        Portfolio
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-        <ul class="navbar-nav nav-pills ms-lg-5 me-lg-5 mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#about">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#education">EDUCATION</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#skills">SKILLS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#projects">PROJECTS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#contact">CONTACT ME</a>
-          </li>
-        </ul>
-      </div>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="logo" href="#home" aria-label="Anil Yarlagadda, home">AY</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#seo">SEO Work</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-btn" id="themeBtn" aria-label="Switch to light mode"><i class="fa-solid fa-sun"></i></button>
+      <a class="pill-outline" href="#contact">Contact <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
     </div>
   </nav>
-  <main>
-    <section id="about" class="section about">
-      <h1 class="section-title">ABOUT</h1>
+</header>
 
-      <div class="d-flex profile justify-content-center h-75 my-auto flex-row flex-wrap align-items-end">
-        <div class="p-2"> <img class="rounded-circle pic" src="profilepic.png" height="250px" width="250px" alt="img">
-        </div>
-        <div class="pb-3 ms-2 d-flex align-items-end text-end">
-          <h2 class="fs-1">ANIL <span style="color:#2563EB ;">YARLAGADDA</span></h2>
-        </div>
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero-text">
+    <h1 id="hero-title">I’m <em>Anil Yarlagadda</em><span class="role-pill">Full Stack Python Developer</span></h1>
+    <p class="sub">SEO &amp; Digital Marketing Enthusiast · Hyderabad, India</p>
+  </div>
 
-      </div>
-      <div class="obj w-75 mx-auto text-center ">
-        <p>Aspiring Frontend Developer with strong knowledge of HTML5, CSS3, Bootstrap, and JavaScript. Looking for an
-          opportunity to build responsive and user-friendly websites while contributing to real-world projects.</p>
-      </div>
-    </section>
-    <section class="section education" id="education">
-      <h2 class="section-title">EDUCATION</h2>
+  <aside class="float-card left" aria-label="Availability">
+    <h2>Open to work</h2>
+    <p>2025 B.Tech IT graduate looking for Python developer, front-end or entry-level SEO roles.</p>
+  </aside>
 
-      <div class="edu-timeline">
+  <img class="hero-img" src="assets/anil-yarlagadda-profile.webp" width="600" height="720" alt="Profile photo of Anil Yarlagadda, Full Stack Python Developer in Hyderabad" fetchpriority="high">
 
-        <div class="edu-item item-2">
-          <h3>Bachelor of Technology (B.Tech)</h3>
-          <span>2021 - 2025</span>
-          <p>Information Technology - Guru Nanak Institute of Technology <br>Cgpa:8.3</p>
+  <aside class="float-card right" aria-label="Focus areas">
+    <h2>My focus</h2>
+    <ul>
+      <li>Backend: Python, Django, REST API</li>
+      <li>Frontend: React.js, HTML, CSS</li>
+      <li>SEO: technical &amp; on-page</li>
+    </ul>
+  </aside>
 
-        </div>
+  <div class="hero-cta">
+    <a class="pill" href="assets/Anil_Yarlagadda_Resume.pdf" download>Download Resume</a>
+    <a class="pill ghost" href="#contact">Contact Me</a>
+    <a class="icon-link" href="https://github.com/Anil-23200" target="_blank" rel="noopener" aria-label="Anil Yarlagadda on GitHub"><i class="fa-brands fa-github"></i></a>
+    <a class="icon-link" href="https://www.linkedin.com/in/anil-yarlagadda/" target="_blank" rel="noopener" aria-label="Anil Yarlagadda on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+</section>
 
-        <div class="edu-item">
-          <h3>Intermediate (12th)</h3>
-          <span>2019 - 2021</span>
-          <p>MPC - Sri Chaitanya Junior College <br>Marks:984</p>
-        </div>
+<!-- ABOUT -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <h2 class="title" id="about-title">Who am I?</h2>
+  <div class="about-body">
+    <p>I’m a 2025 B.Tech Information Technology graduate from Guru Nanak Institute of Technology, Hyderabad. I build web applications with Python, Django and React.js, and I enjoy turning ideas into clean, responsive interfaces.</p>
+    <p>Alongside development, I’ve completed an SEO course and practise on-page SEO, technical SEO, Google Search Console and GA4 fundamentals. I like pairing web development with search visibility, so the sites I build are easy to find as well as easy to use.</p>
+    <p>I learn quickly, enjoy solving problems step by step, and I’m looking for a role where I can grow as a Python developer while applying SEO and digital marketing skills.</p>
+    <a class="pill" href="#projects">Show my projects</a>
+  </div>
+</section>
 
-        <div class="edu-item">
-          <h3>SSC (10th)</h3>
-          <span>2018 - 2019</span>
-          <p>ZPHS Bonakal <br>Cgpa:9.0</p>
-        </div>
-
-      </div>
-    </section>
-    <section id="skills" class="section skills">
-      <h2 class="section-title">SKILLS</h2>
-      <div class="skills-icons mt-4">
-        <div><img src="https://img.icons8.com/?size=96&id=20909&format=png" alt=""> HTML5</div>
-        <div><img src="https://img.icons8.com/?size=96&id=21278&format=png" alt=""> CSS3</div>
-        <div><img src="https://img.icons8.com/?size=96&id=108784&format=png" alt=""> JavaScript</div>
-        <div><img src="https://img.icons8.com/?size=96&id=PndQWK6M1Hjo&format=png" alt=""> Bootstrap</div>
-        <div><img src="https://img.icons8.com/?size=96&id=13441&format=png" alt="">Python</div>
-        <div><img src="https://img.icons8.com/?size=96&id=UFXRpPFebwa2&format=png" alt="" class="bg-light">MySQL</div>
-        <div><img src="https://img.icons8.com/?size=96&id=74402&format=png" alt="">MongoDB</div>
-        <div><img src="https://img.icons8.com/?size=96&id=63777&format=png" alt="">GitHub</div>
-        <div><img src="https://img.icons8.com/?size=96&id=9OGIyU8hrxW5&format=png" alt="">VS Code</div>
-        <div><img src="https://img.icons8.com/?size=96&id=13677&format=png" alt="">Adobe Photoshop</div>
-      </div>
-
-
-    </section>
-    <section id="projects" class="section projects">
-      <h2 class="section-title">PROJECTS</h2>
-      <div class="accordion accordion-flush mx-auto w-50" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header ">
-            <button class="accordion-button collapsed  " type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Personal Portfolio website
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <p>- Designed and developed a responsive personal portfolio website to showcase skills, projects, and
-                achievements. <br>
-                - Implemented modern UI components using Bootstrap and custom CSS. <br>
-                - Deployed the website using GitHub Pages for public access. <br>
-                - Managed source code and updates through Git and GitHub.
-              </p> <a href="https://anil-23200.github.io/personalportfilio-AnilYarlagadda/" target="_self" class="btn  "
-                tabindex="-1" role="button" aria-disabled="true">Live Link</a>
-
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Responsive Web Templates Collection
-            </button>
-          </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <p>- Created multiple responsive website templates including Government Web Pages, and login forms. <br>
-                - Frontend: HTML5, CSS3, Bootstrap <br>
-                - Tools: Git, GitHub Pages, VS Code <br>
-                - Hosted templates on GitHub for version control and deployment.</p>
-              <a href="https://anil-23200.github.io/aptsample/" class="btn  " target="_blank" tabindex="-1"
-                role="button" aria-disabled="true">Live Link-1</a>
-              <a href="https://centralwebsample.vercel.app/" target="_blank" class="btn  " tabindex="-1" role="button"
-                aria-disabled="true">Live Link-2</a>
-                 <p>- Developed a simple calculator application using HTML5, CSS3, and JavaScript.</p>
-                 <a href="https://anil-23200.github.io/calculator/" target="_blank" class="btn  " tabindex="-1" role="button"
-                aria-disabled="true">Calculator</a>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item ">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Academic Projects
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
-              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
-              happening here in terms of content, but just filling up the space to make it look, at least at first
-              glance, a bit more representative of how this would look in a real-world application.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <aside>
-      <div class=" w-25 mx-auto mt-4 mb-4">
-        <a class="btn btn-primary"
-          href="https://drive.google.com/file/d/1AvmLy1o41sqLQs4-nGnbuffLtgE5MlVH/view?usp=drive_link" target="_blank"
-          type="button" tabindex="-1" role="button" aria-disabled="true"><i class="bi bi-download"></i>
-          My Resume</a>
-
-      </div>
-    </aside>
-    <section class="section contact" id="contact">
-      <h2 class="section-title">CONTACT ME</h2>
-
-      <form class="w-50 mx-auto mt-4" onsubmit="contactMe(event)">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
-          <label for="name">Name</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-          <label for="email">Email address</label>
-        </div>
-        <div class="form-floating">
-          <textarea class="form-control" placeholder="Leave a message here" name="message" id="message"
-            required></textarea>
-          <label for="message">Message</label>
-        </div>
-        <div class=" my-3 ">
-          <button class="btn btn-primary " type="submit" >Send Me</button>
-        </div>
-
-      </form>
-
-    </section>
-
-  </main>
-  <footer class="footer w-75 mx-auto mb-4 flex-sm-column">
-    <div class="d-flex justify-content-evenly align-items-center flex-wrap ">
-      <div><img src="imagelogo.png" height="30px" alt=""> &copy;Anil Yarlagadda</div>
-      <div class="text-center social-links">
-        <h2 class="section-title-sm">Connect With Me</h2>
-        <a href="https://www.linkedin.com/in/anil-yarlagadda/" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/Anil-23200" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.reddit.com/user/anil_yarlagadda/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button"
-          target="_blank"><i class="bi bi-reddit"></i></a>
-        <a href="https://www.instagram.com/anil_koundinyaa/" target="_blank"><i class="bi bi-instagram"></i></a>
-      </div>
-      <nav class="nav flex-column ">
-
-        <a class="nav-link d-flex flex-nowrap flex-shrink-3" href="mailto:anilyarlagadda6@gmail.com"><i
-            class="bi bi-envelope " style="color: rgb(189, 127, 56); font-size: 36px;"><span class="ms-2 "
-              style="color: black; font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif;font-size: 24px;">anilyarlagadda6@gmail.com</span></i></a>
-        <a class="nav-link " href="https://wa.me/919676857922" target="_blank"><i style="color: green; font-size: 36px;"
-            class="bi bi-whatsapp"><span class="ms-2"
-              style="color: black;font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif; font-size: 24px;">9676857922</span></i>
-        </a>
-        <a class="nav-link" href="tel:9676857922"><i style="color:blue; font-size: 36px;" class="bi bi-telephone"> <span
-              style="color: black;font-family:'Franklin Gothic Medium', 'Arial Narrow' sans-serif;font-size:24px;"
-              clas="ms-2 ">+91 9676857922</span></i>
-        </a>
-
-      </nav>
+<!-- SKILLS -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <h2 class="title" id="skills-title">My Skills</h2>
+  <div class="skills-layout">
+    <div class="tiles" role="list">
+      <div class="tile" role="listitem"><i class="fa-brands fa-python" style="color:#ffd43b"></i><span>Python</span></div>
+      <div class="tile" role="listitem"><i class="fa-brands fa-java" style="color:#f89820"></i><span>Java</span></div>
+      <div class="tile" role="listitem"><i class="fa-brands fa-html5" style="color:#e44d26"></i><span>HTML5</span></div>
+      <div class="tile" role="listitem"><i class="fa-brands fa-css3-alt" style="color:#2d8fe0"></i><span>CSS3</span></div>
+      <div class="tile" role="listitem"><i class="fa-brands fa-js" style="color:#f7df1e"></i><span>JavaScript</span></div>
+      <div class="tile" role="listitem"><i class="fa-brands fa-react" style="color:#61dafb"></i><span>React.js</span></div>
+      <div class="tile" role="listitem"><i class="fa-solid fa-database" style="color:#4aa3df"></i><span>MySQL / SQL</span></div>
+      <div class="tile" role="listitem"><i class="fa-solid fa-leaf" style="color:#4db33d"></i><span>MongoDB</span></div>
     </div>
-  </footer>
+    <div class="stat">
+      <strong>2025</strong>
+      <span>B.Tech IT Graduate</span>
+      <a class="pill sm" href="assets/Anil_Yarlagadda_SEO_Resume.pdf" download>SEO Resume</a>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script>
+  <div class="more-skills">
+    <h3>Skills by category</h3>
+    <dl class="cats">
+      <div><dt>Programming</dt><dd>Python, Java, C++</dd></div>
+      <div><dt>Frontend</dt><dd>HTML5, CSS3, JavaScript, Bootstrap, React.js</dd></div>
+      <div><dt>Backend</dt><dd>Python, Django, Django REST Framework, REST APIs</dd></div>
+      <div><dt>Database</dt><dd>MySQL, SQL, MongoDB</dd></div>
+      <div><dt>SEO</dt><dd>Keyword Research, On-Page SEO, Off-Page SEO, Technical SEO, Schema Markup, XML Sitemap, Robots.txt, Google Search Console</dd></div>
+      <div><dt>Digital Marketing</dt><dd>Google Ads fundamentals, Content Marketing, Social Media Marketing, Google Analytics 4</dd></div>
+      <div><dt>Tools</dt><dd>Git, GitHub, VS Code, Google Search Console, Google Analytics, PageSpeed Insights, Vercel, Netlify</dd></div>
+    </dl>
+    <!-- Your resumes list C++ nowhere and Off-Page SEO / Google Ads only in this brief: keep only what you can discuss in an interview. -->
+  </div>
+</section>
 
-  </script>
+<!-- PROJECTS -->
+<section class="section" id="projects" aria-labelledby="projects-title">
+  <h2 class="title" id="projects-title">Projects</h2>
+  <p class="lead">Edit each card in this file. Replace the “#” links with your real demo and repository URLs.</p>
+  <div class="cards">
+    <article class="card">
+      <h3>Personal Developer Portfolio</h3>
+      <p>A responsive portfolio website showcasing projects, skills and SEO practice work. This site is its latest version.</p>
+      <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+      <ul class="feat"><li>Light and dark mode</li><li>Structured data and sitemap</li><li>Responsive, accessible layout</li></ul>
+      <div class="links"><a href="#" target="_blank" rel="noopener">Live demo</a><a href="https://github.com/Anil-23200" target="_blank" rel="noopener">GitHub</a></div>
+    </article>
+    <article class="card">
+      <h3>Online Bookstore Management System</h3>
+      <p>A bookstore application with inventory management and a mobile-responsive interface.</p>
+      <ul class="tags"><li>ASP.NET</li><li>SQL Server</li><li>Python</li></ul>
+      <ul class="feat"><li>Inventory management</li><li>Automated inventory reporting</li><li>Mobile-responsive UI</li></ul>
+      <div class="links"><a href="#" target="_blank" rel="noopener">Live demo</a><a href="#" target="_blank" rel="noopener">GitHub</a></div>
+    </article>
+    <article class="card">
+      <h3>Employee Attrition Prediction</h3>
+      <p>A machine learning project that predicts employee turnover using Graph Convolutional Networks and compares it with baseline models.</p>
+      <ul class="tags"><li>Python</li><li>Scikit-learn</li><li>GCN</li><li>L-SVM</li><li>SHAP</li></ul>
+      <ul class="feat"><li>Compared against Logistic Regression and Naive Bayes</li><li>SHAP explainability for key attrition factors</li></ul>
+      <div class="links"><a href="#" target="_blank" rel="noopener">Live demo</a><a href="#" target="_blank" rel="noopener">GitHub</a></div>
+    </article>
+    <article class="card">
+      <h3>Task Management Web App</h3>
+      <p>A responsive task manager built with component-based architecture and hooks-based state management.</p>
+      <ul class="tags"><li>React.js</li><li>JavaScript</li><li>Bootstrap</li><li>CSS3</li></ul>
+      <ul class="feat"><li>Create, edit and filter tasks</li><li>Status tracking</li><li>Mobile-responsive UI</li></ul>
+      <div class="links"><a href="#" target="_blank" rel="noopener">Live demo</a><a href="#" target="_blank" rel="noopener">GitHub</a></div>
+    </article>
+    <article class="card">
+      <h3>SEO Website Optimization Project</h3>
+      <p><strong>Practice project.</strong> Independent learning exercise reviewing and improving on-page and technical SEO elements. No traffic or ranking results are claimed.</p>
+      <ul class="tags"><li>Google Search Console</li><li>GA4</li><li>JSON-LD</li></ul>
+      <ul class="feat"><li>Titles, meta descriptions, headings, alt text</li><li>Canonical, robots.txt, XML sitemap</li><li>Open Graph and Person schema</li></ul>
+      <div class="links"><a href="#seo">See SEO work</a><a href="#" target="_blank" rel="noopener">GitHub</a></div>
+    </article>
+    <article class="card">
+      <h3>Student Management System</h3>
+      <p>EDIT ME: this project is not in your resumes yet. Add your real description and technologies before publishing, or delete this card.</p>
+      <ul class="tags"><li>Add technologies</li></ul>
+      <ul class="feat"><li>Add feature 1</li><li>Add feature 2</li></ul>
+      <div class="links"><a href="#" target="_blank" rel="noopener">Live demo</a><a href="#" target="_blank" rel="noopener">GitHub</a></div>
+    </article>
+  </div>
+</section>
 
+<!-- EXPERIENCE -->
+<section class="section" id="experience" aria-labelledby="exp-title">
+  <h2 class="title" id="exp-title">Experience</h2>
+  <ol class="timeline">
+    <li>
+      <h3>Front-End Developer <span>Sync AI Technologies</span></h3>
+      <time>Mar 2026 – May 2026</time>
+      <ul>
+        <li>Built responsive user-facing interfaces with React.js and Bootstrap for client applications, with a reported 15% increase in user engagement.</li>
+        <li>Automated data-processing pipelines for large datasets, reducing manual effort by 40%.</li>
+        <li>Optimized React.js front-end performance, contributing to a reported 25% decrease in bounce rate.</li>
+      </ul>
+    </li>
+  </ol>
+  <h3 class="sub-h">Education</h3>
+  <ul class="edu">
+    <li><strong>B.Tech, Information Technology</strong> Guru Nanak Institute of Technology, Hyderabad · 2021–2025 · CGPA 8.3</li>
+    <li><strong>Intermediate (MPC)</strong> Sri Chaitanya Junior College, Khammam · 2019–2021 · 98%</li>
+    <li><strong>SSC</strong> ZPHS, Bonakal · 2018–2019 · CGPA 9.0</li>
+  </ul>
+</section>
+
+<!-- SEO CASE STUDIES -->
+<section class="section" id="seo" aria-labelledby="seo-title">
+  <h2 class="title" id="seo-title">SEO Case Studies</h2>
+  <p class="lead">These are practice projects and sample audits from my SEO learning. They are not client work, and no traffic or ranking results are claimed. Add real results here only when you have them.</p>
+  <div class="cards sm">
+    <article class="card"><h3>Keyword research</h3><p>Practised keyword research fundamentals and search intent mapping.</p><span class="badge">Practice</span></article>
+    <article class="card"><h3>Competitor analysis</h3><p>Add a sample competitor comparison when ready.</p><span class="badge">Add sample</span></article>
+    <article class="card"><h3>On-page SEO</h3><p>Reviewed titles, meta descriptions, H1/H2 headings, alt text and internal links.</p><span class="badge">Practice</span></article>
+    <article class="card"><h3>Technical SEO audit</h3><p>Studied canonical URLs, robots.txt, XML sitemaps and indexing concepts.</p><span class="badge">Practice</span></article>
+    <article class="card"><h3>Website speed</h3><p>Page-speed fundamentals. Add your own PageSpeed Insights report once you have tested.</p><span class="badge">Add real test</span></article>
+    <article class="card"><h3>Schema markup</h3><p>Implemented JSON-LD Person, WebSite and ProfilePage schema on this site.</p><span class="badge">Implemented</span></article>
+    <article class="card"><h3>Search Console analysis</h3><p>Verified ownership, submitted a sitemap and studied impressions, clicks, CTR and position.</p><span class="badge">Practice</span></article>
+    <article class="card"><h3>GA4 traffic analysis</h3><p>Reviewed GA4 setup and how traffic-source and engagement reports work.</p><span class="badge">Practice</span></article>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certifications" aria-labelledby="cert-title">
+  <h2 class="title" id="cert-title">Certifications</h2>
+  <ul class="certs">
+    <li><strong>Python Full Stack Development</strong><span>Udemy</span><a href="#" target="_blank" rel="noopener">View certificate</a></li>
+    <li><strong>AWS Cloud Practitioner Essentials</strong><span>AWS</span><a href="#" target="_blank" rel="noopener">View certificate</a></li>
+    <li><strong>Data Analytics &amp; Visualization Simulation</strong><span>Accenture / Forage</span><a href="#" target="_blank" rel="noopener">View certificate</a></li>
+    <li><strong>AI &amp; Machine Learning</strong><span>IBM SkillBuild / Simplilearn</span><a href="#" target="_blank" rel="noopener">View certificate</a></li>
+    <li><strong>Web Design</strong><span>NI-MSME</span><a href="#" target="_blank" rel="noopener">View certificate</a></li>
+    <li><strong>SEO Course</strong><span>Completed</span><a href="#" target="_blank" rel="noopener">View certificate</a></li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="contact-box">
+    <h2 id="contact-title">Let’s have a chat</h2>
+    <p class="lead dark">Based in Hyderabad, Telangana, India.
+      <a href="mailto:anilyarlagadda6@gmail.com">anilyarlagadda6@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/anil-yarlagadda/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://github.com/Anil-23200" target="_blank" rel="noopener">GitHub</a></p>
+    <form id="contactForm" method="POST" novalidate>
+      <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required><small class="err" id="nameErr"></small></div>
+      <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required><small class="err" id="emailErr"></small></div>
+      <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea><small class="err" id="msgErr"></small></div>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+      <button class="pill full" type="submit" id="sendBtn">Send message</button>
+      <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <p>© <span id="year">2026</span> Anil Yarlagadda · Full Stack Python Developer, Hyderabad</p>
+  <p><a href="#home">Back to top</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js" defer></script>
 </body>
-
 </html>
-
-
